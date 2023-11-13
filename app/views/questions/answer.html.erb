@@ -1,0 +1,20 @@
+<blockquote class="blockquote text-left">
+<div class="question">
+  <p><%= params[:question] %></p>
+  <footer class="blockquote-footer"><cite title="Source Title">You</cite></footer>
+</div>
+
+  <div class="answer">
+  <p class="mb-0">
+  <% if params[:question].end_with? '?'%>
+    <p>"Silly question, get dressed and go to work!"</p>
+  <% elsif params[:question].include? "I am going to work" %>
+    <p>Great!</p>
+  <% else%>
+    <p>"I don't care, get dressed and go to work!"</p>
+  <% end%>
+  </p>
+  <footer class="blockquote-footer"><cite title="Source Title">Your coach</cite></footer>
+  </div>
+</blockquote>
+<%= link_to "Ask again", ask_path %>
